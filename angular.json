@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "google-authen": {
+      "projectType": "library",
+      "root": "projects/google-authen",
+      "sourceRoot": "projects/google-authen/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/google-authen/tsconfig.lib.json",
+            "project": "projects/google-authen/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/google-authen/src/test.ts",
+            "tsConfig": "projects/google-authen/tsconfig.spec.json",
+            "karmaConfig": "projects/google-authen/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/google-authen/tsconfig.lib.json",
+              "projects/google-authen/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "my-app"
 }
