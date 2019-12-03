@@ -1,8 +1,23 @@
 {
-  "name": "google-authen",
-  "version": "0.0.1",
+  "name": "google-authen-v2",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
-  }
+  },
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhnguyenict/google-authen.git"
+  },
+  "author": "“khanh <khanhnguyen.ict@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanhnguyenict/google-authen/issues"
+  },
+  "homepage": "https://github.com/khanhnguyenict/google-authen#readme"
 }
