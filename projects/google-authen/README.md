@@ -1,52 +1,52 @@
-# YOUR PACKAGE NAME
+# Google Authen V2
 
-> your package description
+> This Lib implements Google APIs that use the  OAuth 2.0 protocol for authentication and authorization.
 
-A paragraph or two explaining the problem your package solves, including relevant details as to why a developer would choose it, especially if it improves on another package or solution.
+With using this Lib, you could implement Single Sign On feature by a best simple way.
+## Supported versions
+Angular 2+, React Class Component, Vue
+Not tested for React Hooks
 
 ## Installation
-Requires Node version X or above 
+Requires Node version >8.0 or above 
 
 ```bash
-npm install --save your-package-name
+npm i google-authen-v2
 ```
 
 ## How to use
 
 You can use it in your projects like so
+Example for Angular 7
 
 ```javascript
-import { yourPackage } from 'your-package-name';
+import { Component, OnInit } from '@angular/core';
+...
+import * as googleAuthen from 'google-authen-v2';
 
-const result = yourPackage.doSomething(const1, array, { option1: 'soemthing' });
+
+@Component({
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css']
+})
+
+export class SiginComponent implements OnInit {
+     // 3. declare variable here
+  eventHandler = googleAuthen.eventHandler;
+
+  constructor(
+   ...
+ ) { }
+
+  ngOnInit() {
+      
+     //1.  init function loading api and handle
+    googleAuthen.handleInitGoogleApi(your_ClientKey_Registered_From_Google_Service, your_Id_Selector_Button_Login);
+
+     // 2.  this function to listen to data from library
+    this.eventHandler.on('authen-success', (authInfo) => {
+      this.your_Function_Login(authInfo);
+    });
+  }
 ```
-
-You can run the package from the command line {if this applies}
-
-```bash
-$ npx yourPackage -const1 'something'
-# returns some values
-```
-
-## API
-{only if required}
-
-### yourPackage.doSomething(const1, [arrayParam], [options])
-Describe what the params should be and what the result is
-
-### arrayParam
-Why is it optional, how does including it change the result
-
-### options
-
-**option1**
-What does this option do?
-
-## Author
-Your name <youremail@someprovider.com>
-- [@yourtwitterhandle](https://twitter.com/yourtwitterhandle)
-- [your blog](https://yourblog.com)
-- add linkedin or facebook or whatever you want
-
-## Licence
-{add the licence text here}

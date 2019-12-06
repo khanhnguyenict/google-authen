@@ -28,7 +28,6 @@ function handleInitGoogleApi(clientKey, selectorIdButton) {
  */
 
 function initSigninV2(clientKey, idButtonSelector) {
-    console.log('initSigninV2 function');
     config.client_id = clientKey;
     gapi.load('auth2', () => {
         auth2 = gapi.auth2.init(config);
@@ -55,7 +54,6 @@ function initSigninV2(clientKey, idButtonSelector) {
  * Attach the click handler to the sign-in button
  */
 function attachSignin(element) {
-    console.log('attachSignin function');
     auth2.attachClickHandler(element, {}, onSuccess, onFailure);
 }
 
@@ -77,9 +75,6 @@ function onFailure(error) {
  * Listener method for when the user changes.
  */
 function userChanged(user) {
-    console.log('userChanged function');
-
-    // console.log('User now: ', user);
     googleUser = user;
     updateGoogleUser();
 }
@@ -88,7 +83,6 @@ function userChanged(user) {
  * Listener method for sign-out live value.
  */
 function signinChanged(status) {
-    console.log('signinChanged function :', status);
     // console.log('Signin state changed to ', status);
 }
 
@@ -106,7 +100,6 @@ function updateGoogleUser() {
  * object.
  */
 function refreshValues() {
-    console.log('refreshValues function ');
     if (auth2) {
         googleUser = auth2.currentUser.get();
         updateGoogleUser();
