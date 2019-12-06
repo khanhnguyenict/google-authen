@@ -32,7 +32,7 @@ import * as googleAuthen from 'google-authen-v2';
 })
 
 export class SiginComponent implements OnInit {
-     // 3. declare variable here
+     // 1. declare variable here
   eventHandler = googleAuthen.eventHandler;
 
   constructor(
@@ -41,12 +41,19 @@ export class SiginComponent implements OnInit {
 
   ngOnInit() {
       
-     //1.  init function loading api and handle
-    googleAuthen.handleInitGoogleApi(your_ClientKey_Registered_From_Google_Service, your_Id_Selector_Button_Login);
+     //2.  init function loading api and handle
+    googleAuthen.handleInitGoogleApi(your_clientKey_registered_from_Google_Service, your_id_selector_button_login);
 
-     // 2.  this function to listen to data from library
+     // 3.  this function to listen  data from library
     this.eventHandler.on('authen-success', (authInfo) => {
-      this.your_Function_Login(authInfo);
+      this.your_function_login(authInfo);
     });
   }
+your_function_login(data) {
+   // handle userAuthen here : id_token, access_token ...
+   // send id_token to your backend's server
+  }
+
+
+}
 ```
