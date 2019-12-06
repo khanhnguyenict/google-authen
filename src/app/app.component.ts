@@ -8,17 +8,16 @@ import * as googleAuthen from 'google-authen';
 })
 
 export class AppComponent implements OnInit {
-  script = { src: 'https://apis.google.com/js/platform.js?onload=init' };
-  eventEmmiter = googleAuthen.eventEmitter;
-  googleSignInClient: string = '146277941132-51uhovmfh86i030igjolofcpav2jtkt6.apps.googleusercontent.com';
+  eventHandler = googleAuthen.eventHandler;
+  googleSignInClient = '146277941132-51uhovmfh86i030igjolofcpav2jtkt6.apps.googleusercontent.com';
   ngOnInit() {
-    googleAuthen.handleInitGoogleApi(this.script, this.googleSignInClient, 'gsuite-btn');
-    this.eventEmmiter.on('sign-in-success', (authInfo) => {
+    googleAuthen.handleInitGoogleApi(this.googleSignInClient, 'gsuite-btn');
+    this.eventHandler.on('authen-success', (authInfo) => {
       this.login(authInfo);
     });
   }
   login(data) {
-    debugger;
+    // debugger;
     console.log(data);
   }
 }

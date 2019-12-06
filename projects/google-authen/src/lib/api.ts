@@ -1,21 +1,24 @@
 import { Constant, scriptObject, isLoadedScript } from './constant';
-import { IScript } from './model';
 
-function loadScript(source: IScript) {
+function loadScript() {
     const isloadedScript = isLoadedScript();
     return new Promise((resolve, reject) => {
         if (isloadedScript) {
-            resolve({ script: source.name, loaded: true, status: Constant.LOAD_STATUS });
+            console.log('isloadedScript loaded :', isloadedScript);
+
+            resolve({ script: scriptObject.name, loaded: true, status: Constant.LOAD_STATUS });
         } else {
+            console.log('isloadedScript not loaded :', isloadedScript);
+
             const script = document.createElement('script');
             script.type = Constant.SCRIPT_TYPE;
-            script.src = source.src;
+            script.src = scriptObject.src;
             script.onload = () => {
                 scriptObject.loaded = true;
-                resolve({ script: source.name, loaded: true, status: Constant.LOAD_STATUS });
+                resolve({ script: scriptObject.name, loaded: true, status: Constant.LOAD_STATUS });
             };
-            script.onerror = (error: any) => resolve({ script: source.name, loaded: false, status: Constant.LOAD_STATUS });
-            document.getElementsByTagName('head')[0].appendChild(script);
+            script.onerror = (error: any) => reject({ script: scriptObject.name, loaded: false, status: Constant.LOAD_STATUS, error: error });
+            document.getElementsByTagName('body')[0].appendChild(script);
         }
     });
 }

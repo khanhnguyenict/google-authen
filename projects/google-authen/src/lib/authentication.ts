@@ -2,8 +2,11 @@ import { config } from './constant';
 import { loadScript } from './api';
 import * as EventEmitter from 'events';
 
-const eventEmitter = new EventEmitter.EventEmitter();
+/** handle emit data when sign success */
+const eventHandler = new EventEmitter.EventEmitter();
+
 declare const gapi: any;
+
 let googleUser: any;
 
 /**
@@ -14,8 +17,10 @@ let auth2: any;
 /**
  *  Initializes the Sign-In client after the script loaded.
  */
-function handleInitGoogleApi(sourceScript, clientKey, idButtonSelector) {
-    loadScript(sourceScript).then(() => initSigninV2(clientKey, idButtonSelector));
+function handleInitGoogleApi(clientKey, selectorIdButton) {
+    loadScript()
+        .then(() => initSigninV2(clientKey, selectorIdButton))
+        .catch(error => console.log('Error from loading script : ', error));
 }
 
 /**
@@ -23,6 +28,7 @@ function handleInitGoogleApi(sourceScript, clientKey, idButtonSelector) {
  */
 
 function initSigninV2(clientKey, idButtonSelector) {
+    console.log('initSigninV2 function');
     config.client_id = clientKey;
     gapi.load('auth2', () => {
         auth2 = gapi.auth2.init(config);
@@ -49,6 +55,7 @@ function initSigninV2(clientKey, idButtonSelector) {
  * Attach the click handler to the sign-in button
  */
 function attachSignin(element) {
+    console.log('attachSignin function');
     auth2.attachClickHandler(element, {}, onSuccess, onFailure);
 }
 
@@ -57,7 +64,7 @@ function attachSignin(element) {
  */
 function onSuccess(user) {
     const authInfo = user.getAuthResponse();
-    eventEmitter.emit('sign-in-success', authInfo);
+    eventHandler.emit('authen-success', authInfo);
 }
 
 /**
@@ -70,7 +77,9 @@ function onFailure(error) {
  * Listener method for when the user changes.
  */
 function userChanged(user) {
-    console.log('User now: ', user);
+    console.log('userChanged function');
+
+    // console.log('User now: ', user);
     googleUser = user;
     updateGoogleUser();
 }
@@ -79,6 +88,7 @@ function userChanged(user) {
  * Listener method for sign-out live value.
  */
 function signinChanged(status) {
+    console.log('signinChanged function :', status);
     // console.log('Signin state changed to ', status);
 }
 
@@ -96,10 +106,11 @@ function updateGoogleUser() {
  * object.
  */
 function refreshValues() {
+    console.log('refreshValues function ');
     if (auth2) {
         googleUser = auth2.currentUser.get();
         updateGoogleUser();
     }
 }
 
-export { handleInitGoogleApi, eventEmitter };
+export { handleInitGoogleApi, eventHandler };

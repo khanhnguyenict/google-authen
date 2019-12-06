@@ -15,9 +15,9 @@ const config = {
 };
 
 const scriptObject = {
-    name: 'gsuite',
+    name: 'google-authen',
     loaded: false,
-    src: ''
+    src: 'https://apis.google.com/js/platform.js?onload=init'
 };
 
 function isLoadedScript() {
