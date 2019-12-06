@@ -42,7 +42,9 @@ export class SiginComponent implements OnInit {
   ngOnInit() {
       
      //2.  init function loading api and handle
-    googleAuthen.handleInitGoogleApi(your_clientKey_registered_from_Google_Service, your_id_selector_button_login);
+    googleAuthen.handleInitGoogleApi(
+        your_client_key_registered_from_google_service, 
+        your_id_selector_button_login);
 
      // 3.  this function to listen  data from library
     this.eventHandler.on('authen-success', (authInfo) => {
