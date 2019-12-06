@@ -6,8 +6,8 @@ Live examples: [here]('')
 
 ## Supported versions
 1. For Angular 2+,
-2. For React 16 +
-3. Vue 3 +
+2. For React 14+
+3. Vue 3+
 
 
 ## Installation
