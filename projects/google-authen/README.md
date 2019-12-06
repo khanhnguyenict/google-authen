@@ -1,23 +1,34 @@
 # GoogleAuthen
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+Google Authen implementation for Angular , React, Vue.
+Features: Google APIs use the OAuth 2.0 protocol for Client-side Web Applications.
+Live examples: [here]('')
 
-## Code scaffolding
+## Supported versions
+1. For Angular 2+,
+2. For React 16 +
+3. Vue 3 +
 
-Run `ng generate component component-name --project google-authen` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project google-authen`.
-> Note: Don't forget to add `--project google-authen` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+## Installation
 
-Run `ng build google-authen` to build the project. The build artifacts will be stored in the `dist/` directory.
+[npm i google-authen-v2]('')
 
-## Publishing
+## Usage
+[This Lib need to be executed after Loaded Dom]('')
+For Angular 7 example : 
+*import* { %{color:green}Component%, %{color:green}OnInit% } from %{color:red}'@angular/core'%;
+*import* * as %{color:green}googleAuthen% from %{color:red}'google-authen'%;
 
-After building your library with `ng build google-authen`, go to the dist folder `cd dist/google-authen` and run `npm publish`.
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
 
-## Running unit tests
 
-Run `ng test google-authen` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+
 
 ## Further help
 
