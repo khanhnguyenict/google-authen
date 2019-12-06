@@ -59,3 +59,8 @@ your_function_login(data) {
 
 }
 ```
+## Author
+khanhnguyen.ict@gmail.com
+
+## GitHub link source code to demo
+https://github.com/khanhnguyenict/google-authen
