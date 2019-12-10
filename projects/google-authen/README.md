@@ -56,7 +56,6 @@ If you need to register an api-key from google, please check out [here.](https:/
         // send id_token to your backend's server
         }
 
-
   }
   ```
 
@@ -100,8 +99,8 @@ If you need to register an api-key from google, please check out [here.](https:/
       )
     }
   }
-
   ```
+
   ### 3. Example for Vue 2.6
   ```javascript
   <template>
@@ -110,8 +109,7 @@ If you need to register an api-key from google, please check out [here.](https:/
   </div>
   </template>
 
-  ...
- // <script>
+  // your script 
   import * as googleAuthen from 'google-authen-v2'
 
   export default {
@@ -143,7 +141,6 @@ If you need to register an api-key from google, please check out [here.](https:/
     }
   }
 }
-// </script>
   ```
 ## Author
 khanhnguyen.ict@gmail.com
