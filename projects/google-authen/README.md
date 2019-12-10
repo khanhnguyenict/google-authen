@@ -101,7 +101,7 @@ If you need to register an api-key from google, please check out [here.](https:/
   }
   ```
 
-  <!-- ### 3. Example for Vue 2.6
+  ### 3. Example for Vue 2.6
   ```javascript
   <template>
   <div id="app">
@@ -141,7 +141,7 @@ If you need to register an api-key from google, please check out [here.](https:/
     }
   }
 }
-  ``` -->
+  ```
 ## Author
 khanhnguyen.ict@gmail.com
 
