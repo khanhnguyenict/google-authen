@@ -15,7 +15,7 @@ npm i google-authen-v2
 
 ## How to use
 If you need to register an api-key from google, please check out [here.](https://developers.google.com/maps/documentation/javascript/get-api-key)
-You can use it in your projects like so :
+
   ### 1. Example for Angular 8
 
   ```javascript
@@ -66,7 +66,7 @@ You can use it in your projects like so :
   ...
   import * as googleAuthen from 'google-authen-v2';
 
-  class SignApp extends React.Component {
+  class LoginApp extends React.Component {
 
     // 1. declare variable here
     eventHandler = googleAuthen.eventHandler;
@@ -89,10 +89,8 @@ You can use it in your projects like so :
     }
 
      your_function_login(userAuthen) {
-       
         //4. handle userAuthen here : id_token, access_token...,  
         //send id_token to your backend's server
-        
       }
 
     render() {
@@ -103,6 +101,50 @@ You can use it in your projects like so :
     }
   }
 
+  ```
+  ### 3. Example for Vue
+  ```javascript
+  <template>
+  <div id="app">
+    <button id='your_id_selector_button_login'>Login With Gmail</button>
+  </div>
+  </template>
+```
+<script>
+...
+  import * as googleAuthen from 'google-authen-v2'
+
+  export default {
+
+  data() {
+    return {
+    // 1. declare variable here
+      eventHandler : google.eventHandler
+    }
+  },
+  name: 'app',
+
+  mounted() {
+
+    //2. init function loading api and binding click's event to your signin button
+      googleAuthen.handleInitGoogleApi(
+        your_client_key_registered_from_google_service, 
+        your_id_selector_button_login);
+
+      //3. this function to listen data from library return
+      this.eventHandler.on('authen-success', (authInfo) => {
+        this.your_function_login(authInfo);
+      });
+  },
+  methods:{
+   your_function_login(userAuthen) {
+    //4. handle userAuthen here : id_token, access_token...,  
+    //send id_token to your backend's server
+    }
+  }
+}
+</script>
+  ```
   ```
 ## Author
 khanhnguyen.ict@gmail.com
