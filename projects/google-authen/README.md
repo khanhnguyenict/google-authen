@@ -16,11 +16,10 @@ npm i google-authen-v2
 ## How to use
 If you need to register an api-key from google, please check out [here.](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-  ### 1. Example for Angular 8
+  ### Example for Angular 8
 
   ```javascript
   import { Component, OnInit } from '@angular/core';
-  ...
   import * as googleAuthen from 'google-authen-v2';
 
 
@@ -35,7 +34,6 @@ If you need to register an api-key from google, please check out [here.](https:/
     eventHandler = googleAuthen.eventHandler;
 
     constructor(
-    ...
   ) { }
 
     ngOnInit() {
@@ -59,10 +57,9 @@ If you need to register an api-key from google, please check out [here.](https:/
   }
   ```
 
-  ### 2. Example for React 16 
+  ### Example for React 16 
   ``` javascript
   import React from 'react';
-  ...
   import * as googleAuthen from 'google-authen-v2';
 
   class LoginApp extends React.Component {
@@ -101,15 +98,9 @@ If you need to register an api-key from google, please check out [here.](https:/
   }
   ```
 
-  ### 3. Example for Vue 2.6
+  ### Example for Vue 2.6
   ```javascript
-  <template>
-  <div id="app">
-    <button id='your_id_selector_button_login'>Login With Gmail</button>
-  </div>
-  </template>
 
-  // your script 
   import * as googleAuthen from 'google-authen-v2'
 
   export default {
@@ -121,7 +112,6 @@ If you need to register an api-key from google, please check out [here.](https:/
     }
   },
   name: 'app',
-
   mounted() {
 
     //2. init function loading api and binding click's event to your signin button
