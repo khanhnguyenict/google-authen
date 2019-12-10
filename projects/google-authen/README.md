@@ -2,63 +2,101 @@
 
 > This Lib implements Google APIs that use the  OAuth 2.0 protocol for authentication and authorization.
 
-With using this Lib, you could implement Single Sign On feature by a best simple way.
+With using this library, you could implement Single Sign On feature by a best simple way.
 ## Supported versions
-Angular 2+, React Class Component, Vue
-Not tested for React Hooks
+Angular 2+, React Class Component, Vue.
 
 ## Installation
-Requires Node version >8.0 or above 
+Requires Node version > 8.0 or above 
 
 ```bash
 npm i google-authen-v2
 ```
 
 ## How to use
+If you need to register an api-key from google, please check out [here.](https://developers.google.com/maps/documentation/javascript/get-api-key)
+You can use it in your projects like so :
+  ### 1. Example for Angular 8
 
-You can use it in your projects like so
-Example for Angular 7
-
-```javascript
-import { Component, OnInit } from '@angular/core';
-...
-import * as googleAuthen from 'google-authen-v2';
+  ```javascript
+  import { Component, OnInit } from '@angular/core';
+  ...
+  import * as googleAuthen from 'google-authen-v2';
 
 
-@Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
-})
+  @Component({
+    selector: 'app-signin',
+    templateUrl: './signin.component.html',
+    styleUrls: ['./signin.component.css']
+  })
 
-export class SiginComponent implements OnInit {
-     // 1. declare variable here
-  eventHandler = googleAuthen.eventHandler;
+  export class SiginComponent implements OnInit {
+      // 1. declare variable here
+    eventHandler = googleAuthen.eventHandler;
 
-  constructor(
-   ...
- ) { }
+    constructor(
+    ...
+  ) { }
 
-  ngOnInit() {
-      
-     //2.  init function loading api and handle
-    googleAuthen.handleInitGoogleApi(
+    ngOnInit() {
+        
+      //2. init function loading api and add click event to your signin button
+      googleAuthen.handleInitGoogleApi(
+          your_client_key_registered_from_google_service, 
+          your_id_selector_button_login);
+
+      // 3. this function to listen  data from library return
+      this.eventHandler.on('authen-success', (authInfo) => {
+        this.your_function_login(authInfo);
+      });
+    }
+
+      your_function_login(data) {
+        // handle userAuthen here : id_token, access_token ...
+        // send id_token to your backend's server
+        }
+
+
+  }
+  ```
+
+  ### 2. Example for React 16 
+  ``` javascript
+  import React from 'react';
+  ...
+  import * as googleAuthen from 'google-authen-v2';
+
+  class SignApp extends React.Component {
+
+    // 1. declare variable here
+    eventHandler = googleAuthen.eventHandler;
+
+    constructor() {
+      super();
+    }
+
+    componentDidMount(){
+
+      //2. init function loading api and add click event to your signin button
+      googleAuthen.handleInitGoogleApi(
         your_client_key_registered_from_google_service, 
         your_id_selector_button_login);
 
-     // 3.  this function to listen  data from library
-    this.eventHandler.on('authen-success', (authInfo) => {
-      this.your_function_login(authInfo);
-    });
-  }
-your_function_login(data) {
-   // handle userAuthen here : id_token, access_token ...
-   // send id_token to your backend's server
+      //3. this function to listen data from library return
+      this.eventHandler.on('authen-success', (authInfo) => {
+        this.your_function_login(authInfo);
+      });
+    }
+
+    render() {
+      return(
+        /**form login here */
+        <button id ='your_id_selector_button_login'>Login With Gmail</button>
+      )
+    }
   }
 
-
-}
-```
+  ```
 ## Author
 khanhnguyen.ict@gmail.com
 
