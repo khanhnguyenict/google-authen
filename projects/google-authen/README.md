@@ -102,16 +102,16 @@ If you need to register an api-key from google, please check out [here.](https:/
   }
 
   ```
-  ### 3. Example for Vue
+  ### 3. Example for Vue 2.6
   ```javascript
   <template>
   <div id="app">
     <button id='your_id_selector_button_login'>Login With Gmail</button>
   </div>
   </template>
-```
-<script>
-...
+
+  ...
+ // <script>
   import * as googleAuthen from 'google-authen-v2'
 
   export default {
@@ -143,8 +143,7 @@ If you need to register an api-key from google, please check out [here.](https:/
     }
   }
 }
-</script>
-  ```
+// </script>
   ```
 ## Author
 khanhnguyen.ict@gmail.com
