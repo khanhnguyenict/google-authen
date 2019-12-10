@@ -56,7 +56,7 @@ If you need to register an api-key from google, please check out [here.](https:/
 
   }
   ```
-
+<!-- 
   ### Example for React 16 
   ``` javascript
   import React from 'react';
@@ -131,7 +131,7 @@ If you need to register an api-key from google, please check out [here.](https:/
     }
   }
 }
-  ```
+  ``` -->
 ## Author
 khanhnguyen.ict@gmail.com
 
