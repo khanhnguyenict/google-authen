@@ -16,7 +16,7 @@ npm i google-authen-v2
 ## How to use
 If you need to register an api-key from google, please check out [here.](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-  ### Example for Angular 8
+### Example for Angular 8
 
   ```javascript
   import { Component, OnInit } from '@angular/core';
@@ -56,8 +56,8 @@ If you need to register an api-key from google, please check out [here.](https:/
 
   }
   ```
-<!-- 
-  ### Example for React 16 
+
+### Example for React 16 
   ``` javascript
   import React from 'react';
   import * as googleAuthen from 'google-authen-v2';
@@ -98,7 +98,7 @@ If you need to register an api-key from google, please check out [here.](https:/
   }
   ```
 
-  ### Example for Vue 2.6
+### Example for Vue 2.6
   ```javascript
 
   import * as googleAuthen from 'google-authen-v2'
@@ -131,7 +131,7 @@ If you need to register an api-key from google, please check out [here.](https:/
     }
   }
 }
-  ``` -->
+  ```
 ## Author
 khanhnguyen.ict@gmail.com
 
