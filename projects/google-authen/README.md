@@ -40,7 +40,7 @@ You can use it in your projects like so :
 
     ngOnInit() {
         
-      //2. init function loading api and add click event to your signin button
+      //2. init function loading api and binding click's event to your signin button
       googleAuthen.handleInitGoogleApi(
           your_client_key_registered_from_google_service, 
           your_id_selector_button_login);
@@ -51,8 +51,8 @@ You can use it in your projects like so :
       });
     }
 
-      your_function_login(data) {
-        // handle userAuthen here : id_token, access_token ...
+      your_function_login(userAuthen) {
+        //4. handle userAuthen here : id_token, access_token ...
         // send id_token to your backend's server
         }
 
@@ -77,7 +77,7 @@ You can use it in your projects like so :
 
     componentDidMount(){
 
-      //2. init function loading api and add click event to your signin button
+      //2. init function loading api and binding click's event to your signin button
       googleAuthen.handleInitGoogleApi(
         your_client_key_registered_from_google_service, 
         your_id_selector_button_login);
@@ -87,6 +87,13 @@ You can use it in your projects like so :
         this.your_function_login(authInfo);
       });
     }
+
+     your_function_login(userAuthen) {
+       
+        //4. handle userAuthen here : id_token, access_token...,  
+        //send id_token to your backend's server
+        
+      }
 
     render() {
       return(
