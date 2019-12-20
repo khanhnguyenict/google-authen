@@ -83,7 +83,7 @@ function userChanged(user) {
  * Listener method for sign-out live value.
  */
 function signinChanged(status) {
-    // console.log('Signin state changed to ', status);
+    eventHandler.emit('sigin-status', status);
 }
 
 /**

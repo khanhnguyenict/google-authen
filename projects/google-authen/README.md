@@ -112,7 +112,7 @@ If you need to register an api-key from google, please check out [here.](https:/
   data() {
     return {
     // 1. declare variable here
-      eventHandler : google.eventHandler
+      eventHandler : googleAuthen.eventHandler
     }
   },
   name: 'app',
@@ -140,4 +140,4 @@ If you need to register an api-key from google, please check out [here.](https:/
 khanhnguyen.ict@gmail.com
 
 ## GitHub link source code to demo
-https://github.com/khanhnguyenict/google-authen
+[https://github.com/khanhnguyenict/google-authen]()

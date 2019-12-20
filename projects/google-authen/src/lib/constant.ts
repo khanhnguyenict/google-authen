@@ -11,7 +11,8 @@ const Constant = {
 const config = {
     client_id: '',
     cookiepolicy: Constant.COOKIE_POLICY,
-    scope: Constant.SCOPE_GSUITE
+    scope: Constant.SCOPE_GSUITE,
+    // ux_mode: 'redirect',
 };
 
 const scriptObject = {
