@@ -136,8 +136,6 @@ If you need to register an api-key from google, please check out [here.](https:/
 }
   //</script>
   ```
-## Author
-khanhnguyen.ict@gmail.com
 
 ## GitHub link source code to demo
-[https://github.com/khanhnguyenict/google-authen]()
+[here](https://github.com/khanhnguyenict/google-authen)
