@@ -20,8 +20,6 @@ export class AppComponent implements OnInit {
     // sigin-status
   }
   login(data) {
-    // debugger;
-    console.log(data);
   }
 }
 

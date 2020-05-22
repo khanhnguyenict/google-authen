@@ -4,12 +4,8 @@ function loadScript() {
     const isloadedScript = isLoadedScript();
     return new Promise((resolve, reject) => {
         if (isloadedScript) {
-            console.log('isloadedScript loaded :', isloadedScript);
-
             resolve({ script: scriptObject.name, loaded: true, status: Constant.LOAD_STATUS });
         } else {
-            console.log('isloadedScript not loaded :', isloadedScript);
-
             const script = document.createElement('script');
             script.type = Constant.SCRIPT_TYPE;
             script.src = scriptObject.src;

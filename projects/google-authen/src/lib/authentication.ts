@@ -20,7 +20,7 @@ let auth2: any;
 function handleInitGoogleApi(clientKey, selectorIdButton) {
     loadScript()
         .then(() => initSigninV2(clientKey, selectorIdButton))
-        .catch(error => console.log('Error from loading script : ', error));
+        .catch(error => console.log(error));
 }
 
 /**
